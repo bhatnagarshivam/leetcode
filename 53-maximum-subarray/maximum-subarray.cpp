@@ -6,9 +6,7 @@ public:
         for(int i=1;i<n;i++){
          sum=max(nums[i],sum+nums[i]);
          max_sum=max(max_sum,sum);
-            if(sum<0){
-                sum=0;
-            }
+           
         }
         return max_sum;
     }
