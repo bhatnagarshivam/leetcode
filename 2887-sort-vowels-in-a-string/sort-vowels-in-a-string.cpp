@@ -1,29 +1,26 @@
 class Solution {
 public:
     string sortVowels(string s) {
-       int n = s.size();
-       string str="";
-       for(char c:s){
-        if(isvowel(c)){
+     string str ="";
+     int k =0;
+       for(auto c : s){
+        if(Isvowel(c)){
             str+=c;
         }
        }
        sort(str.begin(),str.end());
-       int i=0;
-     for(char & c :s ){
-        if(isvowel(c)){
-         c=str[i++];
+       for(auto &c : s){
+        if(Isvowel(c)){
+          c=str[k++];
         }
-     }
-     return s;
-    }
-
-       bool isvowel(char c){
-        char str = tolower(c);
-        if(str=='a' ||str=='e' ||str=='i' ||str=='o' ||str=='u'){
+       }
+       return s;
+       }
+     bool Isvowel(char c) {
+        c=tolower(c);
+        if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'){
             return true;
         }
         return false;
-       }
-           
+     }     
 };
