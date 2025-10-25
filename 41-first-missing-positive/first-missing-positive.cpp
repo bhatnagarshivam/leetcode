@@ -15,6 +15,6 @@ public:
                 return k;
             }
         }
-        return k;
+        return k++;
     }
 };
