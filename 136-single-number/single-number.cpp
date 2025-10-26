@@ -1,17 +1,15 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        int n=nums.size();
-        
-        sort(nums.begin(),nums.end());
-        for(int i= 0;i<n-1;i++){
-            if(nums[i]==nums[i+1]){
-                i++;
-            }
-            else{
-                return nums[i];
+        unordered_map<int,int>freq;
+        for(int i=0;i<nums.size();i++){
+            freq[nums[i]]++;
+        }
+        for(auto p : freq){
+            if(p.second==1){
+                return p.first;
             }
         }
-        return nums[n-1];
+        return 0;
     }
 };
