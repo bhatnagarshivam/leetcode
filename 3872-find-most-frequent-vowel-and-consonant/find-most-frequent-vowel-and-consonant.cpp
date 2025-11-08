@@ -1,20 +1,22 @@
 class Solution {
 public:
     int maxFreqSum(string s) {
-       int n = s.size();
-       int maxvowelfreq=0,maxconsonantfreq=0;
-       map<char,int>freqcount;
-       for(int i=0;i<n;i++){
-        freqcount[s[i]]++;
-       }
-       for(auto c:freqcount){
-        if(isvowel(c.first)) maxvowelfreq=max(maxvowelfreq,c.second);
-        else maxconsonantfreq=max(maxconsonantfreq,c.second);
-    }
-    return maxvowelfreq+maxconsonantfreq;
+        int n = s.size();
+        int maxvowel=0,maxconsonent=0;
+        unordered_map<char,int>count;
+        for(int i=0;i<n;i++){
+            count[s[i]]++;
+        }
+        for(auto c:count){
+            if(isvowel(c.first))  maxvowel=max(maxvowel,c.second);
+            else  maxconsonent=max(maxconsonent,c.second);
+        }
+        return maxvowel+maxconsonent;
     }
     bool isvowel(char c){
-        c=tolower(c);
-        return (c=='a'||c=='e'||c=='o'||c=='i'||c=='u')?true:false;
+        if(c=='a'||c=='e'||c=='u'||c=='o'||c=='i'){
+            return  true;
+        }
+        return false;
     }
 };
