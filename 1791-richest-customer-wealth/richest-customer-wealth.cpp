@@ -3,14 +3,14 @@ public:
     int maximumWealth(vector<vector<int>>& accounts) {
         int m = accounts.size();
         int n = accounts[0].size();
-        int MaxWealth=0,CurrWealth=0;
+        int MaxWealth=0;
         for(int i=0;i<m;i++){
+            int CurrentMax=0;
             for(int j=0;j<n;j++){
-                CurrWealth+=accounts[i][j];
+               CurrentMax+=accounts[i][j];
+            }
+            MaxWealth=max(MaxWealth,CurrentMax);
         }
-        MaxWealth=max(MaxWealth,CurrWealth);
-        CurrWealth=0;
-        }
-        return MaxWealth;
+    return MaxWealth; 
     }
 };
