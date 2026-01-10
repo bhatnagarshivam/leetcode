@@ -10,16 +10,15 @@
  * };
  */
 class Solution {
-    TreeNode*next_pointer=NULL;
 public:
+     TreeNode*prev=NULL;
     void flatten(TreeNode* root) {
-        if(root==NULL) return;
-        if(root==NULL)
-         return ;
-         flatten(root->right);
-         flatten(root->left);
-        root->left=NULL;
-        root->right=next_pointer;
-        next_pointer=root;  
+          if(root==NULL) return ;
+        flatten(root->right);
+        flatten(root->left);
+       root->right=prev;
+       prev=root;
+       root->left=NULL;
+    return;
     }
 };
