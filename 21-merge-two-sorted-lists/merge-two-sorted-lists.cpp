@@ -17,11 +17,11 @@ public:
         ListNode*ptr2=list2;
         while(ptr1 && ptr2){
             if(ptr1->val <= ptr2->val){
-                dummy->next= new ListNode(ptr1->val);
+                dummy->next= ptr1;
                 ptr1=ptr1->next;
             }
             else if(ptr1->val>ptr2->val){
-                dummy->next=new ListNode(ptr2->val);
+                dummy->next=ptr2;
                 ptr2=ptr2->next;
             }
             dummy=dummy->next;
