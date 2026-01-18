@@ -16,14 +16,12 @@ public:
         ListNode*ptr1=list1;
         ListNode*ptr2=list2;
         while(ptr1 && ptr2){
-            int val1=ptr1!=NULL?ptr1->val:0;
-            int val2=ptr2!=NULL?ptr2->val:0;
-            if(val1<=val2){
-                dummy->next= new ListNode(val1);
+            if(ptr1->val <= ptr2->val){
+                dummy->next= new ListNode(ptr1->val);
                 ptr1=ptr1->next;
             }
-            else if(val1>val2){
-                dummy->next=new ListNode(val2);
+            else if(ptr1->val>ptr2->val){
+                dummy->next=new ListNode(ptr2->val);
                 ptr2=ptr2->next;
             }
             dummy=dummy->next;
