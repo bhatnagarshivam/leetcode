@@ -37,10 +37,11 @@ public:
             ptr1=ptr1->next;
         }
        }
-       while(ptr1 != ptr2){
+       while(ptr1  &&  ptr2){
+        if(ptr1==ptr2) return ptr1;
         ptr1=ptr1->next;
         ptr2=ptr2->next;
        }
-       return ptr1;
+       return NULL;
     }
 };
